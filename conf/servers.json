@@ -1,0 +1,15 @@
+{
+    "name":"随州市",
+    "id":"1",
+    "host":"127.0.0.1",
+    "port":"7004",
+    "status":"3",
+    "info":"服务器要更新了",
+    "updateUrl":"http://fir.im/9tur",
+    "updateDes":"更新日志",
+    "version":"1.0.1",
+    "userids":"1,2,3,4",
+    "versionBeta":"1.0.1",
+    "updateUrlIos":"https://itunes.apple.com/us/app/随州卡五星/id1239549629",
+    "versionIos":"1.0.1"
+}

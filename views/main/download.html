@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>随州麻将</title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        // 是否是安卓
+        function isAndroid() {
+            var u = navigator.userAgent;
+            if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) { //安卓手机
+                return true;
+            }
+            return false;
+        }
+
+        function isIOS() {
+            var u = navigator.userAgent;
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            return isiOS;
+        }
+        function isRunOnWeChat() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        $(document).ready(function () {
+            initialize(); 
+            function initialize() {
+                if (true == isIOS()) {
+                    $('#download-tip').removeClass("common-hide");
+                    $('.common-ios').removeClass('common-hide');
+                } else if (true == isAndroid()) {
+                    $('.common-android').removeClass('common-hide');
+                } else {
+                    $('.common-pc').removeClass('common-hide');
+                }
+                // 如果在微信中打开，直接弹遮罩
+                if (true == isRunOnWeChat()) {
+                    $('#mask').removeClass("common-hide");
+                }
+
+                $("#copy-common").html("Copyright&nbsp;&copy;2016-" + new Date().getFullYear());
+            }
+            $('#download-android').on('click', function (e) {
+                if (true == isRunOnWeChat()) {
+                    e.preventDefault();
+                    $('#mask').removeClass("common-hide");
+                }
+            });
+            $('#download-ios').on('click', function (e) {
+                if (true == isRunOnWeChat()) {
+                    e.preventDefault();
+                    $('#mask').removeClass("common-hide");
+                }
+            });
+            //$('#download-pc').on('click', function () {
+            //    alert("在手机中浏览器中打开点击“立即下载”，将会自动下载安装包。");
+            //});
+            $('#mask').on('click', function () {
+                //$('#mask').addClass("common-hide");
+            });
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+			background-color:#FFF;
+        }
+
+        html, body {
+            background: rgb(248, 248, 248);
+            font-family: "Microsoft YaHei" !important;
+            text-align: center;
+			background-color:#FFF;
+        }
+
+        .hp {
+			background-color:#FFF;
+        }
+
+        .common-center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+			background-color:#FFF;
+        }
+
+        .common-hide {
+            display: none;
+			background-color:#FFF;
+        }
+
+        .hp-head {
+            padding-top: 24px;
+            padding-bottom: 24px;
+            position: relative;
+            text-align: center;
+            background: #fff;
+			background-color:#FFF;
+        }
+
+            .hp-head img {
+                width: 160px;
+                height: 56px;
+			background-color:#FFF;
+            }
+
+        .hp-desc {
+            padding-top: 24px;
+            padding-bottom: 24px;
+            background: rgb(248, 248, 248);
+            text-align: center;
+			background-color:#FFF;
+        }
+
+        .hp-desc-title {
+            color: #464646;
+            font-size: 24px;
+            margin-bottom: 20px;
+			background-color:#FFF;
+        }
+
+        .hp-desc-detail {
+            font-size: 13px;
+            color: #9f9f9f;
+            margin-bottom: 10px;
+			background-color:#FFF;
+        }
+
+        .hp-desc-logo {
+            margin-top: 24px;
+            width: 80px;
+            height: 80px;
+			background-color:#FFF;
+        }
+
+        .hp-download {
+            text-align: center;
+            margin-left: 12px;
+            margin-right: 12px;
+			background-color:#FFF;
+        }
+
+        .hp-download-btn {
+            width: 300px;
+            height: 64px;
+			background-color:#FFF;
+        }
+
+        .hp-mask {
+			background-color:#FFF;
+        }
+
+        .hp-mask-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+            opacity: 0.6;
+			background-color:#FFF;
+        }
+
+        .hp-mask-instruction {
+            position: fixed;
+            top: 6px;
+            right: 8px;
+            width: 200px;
+            height: 137px;
+			background-color:#FFF;
+        }
+
+        .hp-guid {
+        }
+
+        .hp-guid img {
+            max-width: 300px;
+            display: block;
+            margin-top: 16px;
+			background-color:#FFF;
+        }
+
+        .hp-guid-title {
+            margin-top: 10px;
+            color: #ffa323;
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+			background-color:#FFF;
+        }
+
+        .hp-copy-common {
+            padding-top:24px;
+			background-color:#FFF;
+        }
+
+        .hp-copy-common .copy-common{
+            font-size: 12px;
+            color: #9f9f9f;
+			background-color:#FFF;
+        }
+        .copy {
+            margin-bottom: 2px;
+			background-color:#FFF;
+        }
+        .com {
+            margin-bottom: 10px;
+			background-color:#FFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- 描述 -->
+    <section class="hp-desc">
+        <p class="hp-desc-title">随州麻将</p>
+        <p class="hp-desc-detail">
+            真正可以打麻将的游戏,与现实中好友一起组局线上游戏。
+        </p>
+        <p class="hp-desc-detail">
+            全面支持安卓、ios客户端，随时随地想玩就玩。
+        </p>
+        <img class="common-center hp-desc-logo" src="assets/images/img2.png" width="311" height="263">
+    </section>
+    <!-- 下载 -->
+    <section class="hp-download">
+        <!-- ios下载链接 -->
+        <a class="common-ios hp-download-download common-hide" href="http://fir.im/9tur">
+            <img id="download-ios" class="common-center hp-download-btn" src="assets/images/img3.png">
+        </a>
+        <!-- android下载链接 -->
+        <a class="common-android hp-download-download common-hide" href="http://fir.im/9tur">
+            <img id="download-android" class="common-center hp-download-btn" src="assets/images/img3.png">
+        </a>
+        <!-- pc下载链接 -->
+        <a class="common-pc hp-download-download common-hide"  href="http://fir.im/9tur">
+            <img id="download-pc" class="common-center common-pc hp-download-btn" src="assets/images/img3.png">
+        </a>
+    </section>
+
+    <section class="hp-guid common-ios common-hide">
+        <p class="hp-guid-title">
+            安装教程（iOS9用户必看）
+        </p>
+        <img class="common-center" src="assets/images/ios_guid.png">
+    </section>
+
+    <section id="mask" class="common-hide hp-mask">
+        <div class="hp-mask-background"></div>
+        <img class="hp-mask-instruction" src="assets/images/instruction.png">
+    </section>
+
+    <section class="hp-copy-common">
+        <!-- 版权 -->
+        <div class="copy-common copy" id="copy-common">Copyright&nbsp;&copy;2017-2018</div>
+        <div class="copy-common com">图南科技有限公司</div>
+    </section>
+
+</body>
+</html>
+

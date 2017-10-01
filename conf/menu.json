@@ -1,0 +1,132 @@
+[
+	{
+		"name": "玩家管理",
+		"icon": "fa-bars",
+		"route": "#",
+		"submenu": [
+			{
+				"name": "玩家列表",
+				"route": "player.list",
+				"action": "PlayerController.List"
+			},
+			{
+				"name": "公告列表",
+				"route": "player.noticelist",
+				"action": "PlayerController.NoticeList"
+			},
+			{
+				"name": "商城列表",
+				"route": "player.shoplist",
+				"action": "PlayerController.ShopList"
+			},
+			{
+				"name": "变量列表",
+				"route": "player.envlist",
+				"action": "PlayerController.EnvList"
+			}
+		]
+	},
+	{
+		"name": "日志管理",
+		"icon": "fa-bars",
+		"route": "#",
+		"submenu": [
+			{
+				"name": "注册日志",
+				"route": "logger.registlist",
+				"action": "LoggerController.RegistList"
+			},
+			{
+				"name": "登录日志",
+				"route": "logger.loginlist",
+				"action": "LoggerController.LoginList"
+			},
+			{
+				"name": "充值日志",
+				"route": "logger.paylist",
+				"action": "LoggerController.PayList"
+			},
+			{
+				"name": "钻石日志",
+				"route": "logger.diamondlist",
+				"action": "LoggerController.DiamondList"
+			},
+			{
+				"name": "金币日志",
+				"route": "logger.coinlist",
+				"action": "LoggerController.CoinList"
+			},
+			{
+				"name": "绑定日志",
+				"route": "logger.buildlist",
+				"action": "LoggerController.BuildList"
+			}
+		]
+	},
+	{
+		"name": "统计图表",
+		"icon": "fa-bars",
+		"route": "#",
+		"submenu": [
+			{
+				"name": "在线统计",
+				"route": "charts.online",
+				"action": "ChartsController.Online"
+			}
+		]
+	},
+	{
+		"name": "代理管理",
+		"icon": "fa-bars",
+		"route": "#",
+		"submenu": [
+			{
+				"name": "代理列表",
+				"route": "agency.agencylist",
+				"action": "AgencyController.AgencyList"
+			},
+			{
+				"name": "提现记录",
+				"route": "agency.cashlist",
+				"action": "AgencyController.CashList"
+			},
+			{
+				"name": "我的代理",
+				"route": "agency.myagencylist",
+				"action": "AgencyController.MyAgencyList"
+			},
+			{
+				"name": "我的提现",
+				"route": "agency.mycashlist",
+				"action": "AgencyController.MyCashList"
+			},
+			{
+				"name": "我的充值",
+				"route": "agency.mypaylist",
+				"action": "AgencyController.MyPayList"
+			},
+			{
+				"name": "我的邀请",
+				"route": "agency.inviterlist",
+				"action": "AgencyController.InviterList"
+			}
+		]
+	},
+	{
+		"name": "系统管理",
+		"icon": "fa-cog",
+		"route": "#",
+		"submenu": [
+			{
+				"name": "角色管理",
+				"route": "role.list",
+				"action": "RoleController.List"
+			},
+			{
+				"name": "用户管理",
+				"route": "user.list",
+				"action": "UserController.List"
+			}
+		]
+	}
+]
