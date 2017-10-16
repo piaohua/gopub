@@ -1,4 +1,4 @@
-# gopub admin
+# suizhou majiang admin
 
 Forked from https://github.com/lisijie/gopub
 
