@@ -1,9 +1,10 @@
 package mail
 
 import (
-	"gomail"
 	"gopub/app/libs"
 	"strings"
+
+	gomail "gopkg.in/gomail.v2"
 
 	"github.com/astaxie/beego"
 )
