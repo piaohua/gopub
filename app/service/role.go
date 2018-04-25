@@ -94,7 +94,7 @@ func (this *roleService) GetAllRoles() ([]entity.Role, error) {
 }
 
 // 更新角色信息
-func (this *roleService) UpdateRole(role *entity.Role, fields ...string) error {
+func (this *roleService) UpdateRole(role *entity.Role, fields bson.M) error {
 	if Has(Roles, bson.M{"role_name": role.RoleName}) {
 		roleHad := new(entity.Role)
 		GetByQ(Roles, bson.M{"role_name": role.RoleName}, roleHad)
@@ -102,7 +102,7 @@ func (this *roleService) UpdateRole(role *entity.Role, fields ...string) error {
 			return errors.New("角色名称已存在")
 		}
 	}
-	if Update(Roles, bson.M{"_id": role.Id}, role) {
+	if Update(Roles, bson.M{"_id": role.Id}, bson.M{"$set": fields}) {
 		return nil
 	}
 	return errors.New("更新失败")

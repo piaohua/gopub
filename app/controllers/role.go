@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/astaxie/beego"
+	"gopkg.in/mgo.v2/bson"
 )
 
 type RoleController struct {
@@ -50,7 +51,9 @@ func (this *RoleController) Edit() {
 	if this.isPost() {
 		role.RoleName = this.GetString("role_name")
 		role.Description = this.GetString("description")
-		err := service.RoleService.UpdateRole(role, "RoleName", "Description")
+		fileds := bson.M{"RoleName": role.RoleName,
+			"Description": role.Description}
+		err := service.RoleService.UpdateRole(role, fileds)
 		if err == nil {
 			service.ActionService.UpdateRole(this.auth.GetUser().UserName, role.RoleName)
 		}
@@ -88,7 +91,8 @@ func (this *RoleController) Perm() {
 		} else {
 			role.ProjectIds = strings.Join(pids, ",")
 		}
-		err := service.RoleService.UpdateRole(role, "ProjectIds")
+		fileds := bson.M{"ProjectIds": role.ProjectIds}
+		err := service.RoleService.UpdateRole(role, fileds)
 		this.checkError(err)
 		err = service.RoleService.SetPerm(role.Id, perms)
 		if err == nil {
